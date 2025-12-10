@@ -51,3 +51,11 @@ function priorityWeight(priority: TaskPriority): number {
   if (priority === "medium") return 2;
   return 3;
 }
+export function getTaskStats(tasks: Task[]): TaskStats {
+  const total = tasks.length;
+  const todo = tasks.filter((t) => t.status === "todo").length;
+  const inProgress = tasks.filter((t) => t.status === "in-progress").length;
+  const done = tasks.filter((t) => t.status === "done").length;
+
+  return { total, todo, inProgress, done };
+}
