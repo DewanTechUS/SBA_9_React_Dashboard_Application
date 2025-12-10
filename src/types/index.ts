@@ -21,3 +21,20 @@ export interface TaskFormData {
   priority: TaskPriority;
   dueDate?: string;
 }
+// Filter options for the dashboard
+export interface TaskFilters {
+  status: TaskStatus | "all";
+  priority: TaskPriority | "all";
+  query: string; // search text
+}
+
+// Sorting options // Define type for sorting tasks
+export type TaskSortBy =
+  | "created-newest"
+  | "created-oldest"
+  
+  | "due-soon"
+  | "due-late"
+  
+  | "priority-high"
+  | "priority-low";
