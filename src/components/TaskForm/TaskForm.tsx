@@ -1,12 +1,7 @@
 // src/components/TaskForm/TaskForm.tsx
 // Task form component for adding new tasks
 import React, { useState } from "react";
-import type {
-  TaskFormData,
-  TaskFormProps,
-  TaskPriority,
-  TaskStatus,
-} from "../../types";
+import type { TaskFormData, TaskFormProps, TaskPriority, TaskStatus } from "../../types";
 
 const initialForm: TaskFormData = {
   title: "",
@@ -58,24 +53,88 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   }
 
   return (
-    <form className="mt-4 space-y-3 rounded-lg bg-white p-4 shadow-sm" onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="mt-4 space-y-3 rounded-lg bg-white p-4 shadow-sm"
+    >
       <h2 className="text-sm font-semibold">Add Task</h2>
 
       {error && (
-        <div className="text-xs text-red-700 bg-red-50 border border-red-200 rounded px-3 py-2">
+        <div className="rounded border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-700">
           {error}
         </div>
       )}
 
-      <input
-        name="title"
-        value={form.title}
-        onChange={handleChange}
-        placeholder="Task title"
-        className="w-full rounded border border-slate-300 px-2 py-1 text-sm"
-      />
+      <div className="grid gap-3 md:grid-cols-2">
+        <div>
+          <label className="block text-[11px] font-medium text-slate-600">Title</label>
+          <input
+            name="title"
+            value={form.title}
+            onChange={handleChange}
+            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+            placeholder="e.g. Finish SBA reflection"
+          />
+        </div>
 
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+        <div>
+          <label className="block text-[11px] font-medium text-slate-600">Due Date</label>
+          <input
+            type="date"
+            name="dueDate"
+            value={form.dueDate || ""}
+            onChange={handleChange}
+            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-[11px] font-medium text-slate-600">Description</label>
+        <textarea
+          name="description"
+          value={form.description}
+          onChange={handleChange}
+          rows={3}
+          className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+          placeholder="Short note about what needs to be done..."
+        />
+      </div>
+
+      <div className="grid gap-3 md:grid-cols-2">
+        <div>
+          <label className="block text-[11px] font-medium text-slate-600">Status</label>
+          <select
+            name="status"
+            value={form.status}
+            onChange={handleChange}
+            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+          >
+            <option value="todo">To Do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+
+        <div>
+          <label className="block text-[11px] font-medium text-slate-600">Priority</label>
+          <select
+            name="priority"
+            value={form.priority}
+            onChange={handleChange}
+            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        className="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+      >
         Add Task
       </button>
     </form>
