@@ -38,3 +38,37 @@ export type TaskSortBy =
   
   | "priority-high"
   | "priority-low";
+
+
+
+  // dashboard statistics // 
+  export interface TaskStats {
+  total: number;
+  todo: number;
+  inProgress: number;
+  done: number;
+}
+
+// Props for various components in the dashboard 
+export interface TaskListProps {
+  tasks: Task[];
+  onToggleStatus: (id: string) => void;
+  onDelete: (id: string) => void;
+}
+
+export interface TaskItemProps {
+  task: Task;
+  onToggleStatus: (id: string) => void;
+  onDelete: (id: string) => void;
+}
+
+export interface TaskFormProps {
+  onSubmit: (data: TaskFormData) => void;
+}
+
+export interface TaskFilterProps {
+  filters: TaskFilters;
+  sortBy: TaskSortBy;
+  onChangeFilters: (filters: TaskFilters) => void;
+  onChangeSortBy: (sortBy: TaskSortBy) => void;
+}
