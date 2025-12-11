@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 import { TaskForm } from "../TaskForm/TaskForm";
 import { TaskFilter } from "../TaskFilter/TaskFilter";
 import { TaskList } from "../TaskList/TaskList";
-import { applyFilters, applySort, getTaskStats } from "../../utils/taskUtils";
+import {
+  applyFilters,
+  applySort,
+  getTaskStats,
+} from "../../utils/taskUtils";
 import type {
   Task,
   TaskFilters,
@@ -21,6 +25,10 @@ export const Dashboard: React.FC = () => {
     query: "",
   });
   const [sortBy, setSortBy] = useState<TaskSortBy>("created-newest");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Export / Import text area state
+  const [exportText, setExportText] = useState("");
 
   // Load tasks from localStorage on first mount
   useEffect(() => {
@@ -81,12 +89,34 @@ export const Dashboard: React.FC = () => {
     setSortBy(next);
   }
 
+  function handleToggleTheme() {
+    setIsDarkMode((prev) => !prev);
+  }
+
+  function handleGenerateExport() {
+    setExportText(JSON.stringify(tasks, null, 2));
+  }
+
+  function handleImport() {
+    if (!exportText.trim()) return;
+    try {
+      const parsed: Task[] = JSON.parse(exportText);
+      setTasks(parsed);
+    } catch (error) {
+      alert("Invalid JSON. Please check the format.");
+    }
+  }
+
   // apply filters + sorting
   const visibleTasks = applySort(applyFilters(tasks, filters), sortBy);
   const stats = getTaskStats(tasks);
 
   return (
-    <div className="min-h-screen bg-slate-100 px-4 py-8 text-slate-900">
+    <div
+      className={`min-h-screen px-4 py-8 ${
+        isDarkMode ? "bg-slate-900 text-slate-100" : "bg-slate-100 text-slate-900"
+      }`}
+    >
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <header className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
@@ -96,9 +126,16 @@ export const Dashboard: React.FC = () => {
               Track tasks, priorities, and progress in one place.
             </p>
           </div>
+          <button
+            type="button"
+            onClick={handleToggleTheme}
+            className="rounded-full border border-slate-300 bg-white px-4 py-1 text-xs font-medium text-slate-700 shadow-sm hover:bg-slate-50"
+          >
+            {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          </button>
         </header>
-
-        {/* Stats */} 
+        
+        {/* Stats */}
         <section className="mt-4 grid gap-3 md:grid-cols-4">
           <div className="rounded-lg bg-white p-3 text-center shadow-sm">
             <p className="text-[11px] text-slate-500">Total</p>
@@ -135,6 +172,36 @@ export const Dashboard: React.FC = () => {
           onToggleStatus={handleToggleStatus}
           onDelete={handleDeleteTask}
         />
+        {/* Export / Import */}
+        <section className="mt-6 rounded-lg bg-white p-4 shadow-sm">
+          <h2 className="text-sm font-semibold">Export / Import Tasks</h2>
+          <p className="mt-1 text-[11px] text-slate-500">
+            You can copy this JSON to save your tasks or paste JSON here to
+            restore them.
+          </p>
+          <div className="mt-2 flex gap-2">
+            <button
+              type="button"
+              onClick={handleGenerateExport}
+              className="rounded-md bg-slate-800 px-3 py-1 text-xs font-medium text-white hover:bg-slate-900"
+            >
+              Generate Export
+            </button>
+            <button
+              type="button"
+              onClick={handleImport}
+              className="rounded-md border border-slate-300 px-3 py-1 text-xs font-medium text-slate-700 hover:bg-slate-50"
+            >
+              Import JSON
+            </button>
+          </div>
+          <textarea
+            value={exportText}
+            onChange={(e) => setExportText(e.target.value)}
+            rows={4}
+            className="mt-2 w-full rounded border border-slate-300 px-2 py-1 text-xs font-mono"
+          />
+        </section>
       </div>
     </div>
   );
