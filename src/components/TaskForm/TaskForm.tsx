@@ -73,7 +73,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
             value={form.title}
             onChange={handleChange}
             className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
-            placeholder="e.g. Finish SBA reflection"
+            placeholder="e.g. Review project documentation"
           />
         </div>
 
