@@ -8,11 +8,11 @@
 - LinkedIn: https://www.linkedin.com/in/dewan-mahmud-a579a0265/
 - Portfolio: https://dewantech.com/
 
-### This project is a Task Management Dashboard built using React, TypeScript, Vite, and Tailwind CSS. It was developed as part of the Per Scholas Software Engineering Program (Cohort 2025-RTT-57). The goal of this project was to build a practical, real-world dashboard application that demonstrates how modern front-end technologies work together.
+ 1. This project is a Task Management Dashboard built using React, TypeScript, Vite, and Tailwind CSS. It was developed as part of the Per Scholas Software Engineering Program (Cohort 2025-RTT-57). The goal of this project was to build a practical, real-world dashboard application that demonstrates how modern front-end technologies work together.
 
-### The dashboard allows users to create, organize, filter, sort, and manage tasks in a clean and user-friendly interface. It includes features such as controlled forms, task validation, dynamic filtering, sorting logic, localStorage persistence, and a fully customizable dark/light theme. Through TypeScript, the project enforces strong typing for all components and data structures, improving reliability and maintainability.
+ 2. The dashboard allows users to create, organize, filter, sort, and manage tasks in a clean and user-friendly interface. It includes features such as controlled forms, task validation, dynamic filtering, sorting logic, localStorage persistence, and a fully customizable dark/light theme. Through TypeScript, the project enforces strong typing for all components and data structures, improving reliability and maintainability.
 
-### This project showcases my understanding of React component architecture, state management, event handling, and reusable UI structures. It also highlights my ability to style applications using Tailwind CSS and manage project structure using Vite. Overall, it demonstrates how multiple front-end skills come together to build a complete and polished application.
+ 3. This project showcases my understanding of React component architecture, state management, event handling, and reusable UI structures. It also highlights my ability to style applications using Tailwind CSS and manage project structure using Vite. Overall, it demonstrates how multiple front-end skills come together to build a complete and polished application.
 
 
 # Project Features
