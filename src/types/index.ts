@@ -9,8 +9,8 @@ export interface Task {
   status: TaskStatus;
   priority: TaskPriority;
   createdAt: number;        // timestamp in milliseconds
-  dueDate?: string;         // optional, store as ISO string// 
-// learn more about ISO strings https://www.w3schools.com/jsref/jsref_toisostring.asp
+  dueDate?: string;         //store as ISO string// 
+
 }
 
 // Define type for task form data
