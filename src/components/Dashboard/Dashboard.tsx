@@ -1,14 +1,28 @@
 // src/components/Dashboard/Dashboard.tsx
 import React, { useEffect, useState } from "react";
 import { TaskForm } from "../TaskForm/TaskForm";
+import { TaskFilter } from "../TaskFilter/TaskFilter";
 import { TaskList } from "../TaskList/TaskList";
-import type { Task, TaskFormData } from "../../types";
+import { applyFilters, applySort, getTaskStats } from "../../utils/taskUtils";
+import type {
+  Task,
+  TaskFilters,
+  TaskFormData,
+  TaskSortBy,
+} from "../../types";
 
 const STORAGE_KEY = "task-dashboard-tasks";
 
 export const Dashboard: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [filters, setFilters] = useState<TaskFilters>({
+    status: "all",
+    priority: "all",
+    query: "",
+  });
+  const [sortBy, setSortBy] = useState<TaskSortBy>("created-newest");
 
+  // Load tasks from localStorage on first mount
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (!saved) return;
@@ -59,20 +73,65 @@ export const Dashboard: React.FC = () => {
     setTasks((prev) => prev.filter((task) => task.id !== id));
   }
 
+  function handleChangeFilters(nextFilters: TaskFilters) {
+    setFilters(nextFilters);
+  }
+
+  function handleChangeSortBy(next: TaskSortBy) {
+    setSortBy(next);
+  }
+
+  // apply filters + sorting
+  const visibleTasks = applySort(applyFilters(tasks, filters), sortBy);
+  const stats = getTaskStats(tasks);
+
   return (
     <div className="min-h-screen bg-slate-100 px-4 py-8 text-slate-900">
       <div className="mx-auto max-w-4xl">
-        <header className="mb-4">
-          <h1 className="text-2xl font-bold">Task Management Dashboard</h1>
-          <p className="text-sm text-slate-500">
-            Track tasks and stay organized.
-          </p>
+        {/* Header */}
+        <header className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <div>
+            <h1 className="text-2xl font-bold">Task Management Dashboard</h1>
+            <p className="text-sm text-slate-500">
+              Track tasks, priorities, and progress in one place.
+            </p>
+          </div>
         </header>
 
+        {/* Stats */} 
+        <section className="mt-4 grid gap-3 md:grid-cols-4">
+          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
+            <p className="text-[11px] text-slate-500">Total</p>
+            <p className="text-lg font-semibold">{stats.total}</p>
+          </div>
+          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
+            <p className="text-[11px] text-slate-500">To Do</p>
+            <p className="text-lg font-semibold">{stats.todo}</p>
+          </div>
+          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
+            <p className="text-[11px] text-slate-500">In Progress</p>
+            <p className="text-lg font-semibold">{stats.inProgress}</p>
+          </div>
+          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
+            <p className="text-[11px] text-slate-500">Done</p>
+            <p className="text-lg font-semibold">{stats.done}</p>
+          </div>
+        </section>
+
+        {/* Task Filter */}
+        <TaskFilter
+          filters={filters}
+          sortBy={sortBy}
+          onChangeFilters={handleChangeFilters}
+          onChangeSortBy={handleChangeSortBy}
+        />
+
+        {/* Task Form */}
         <TaskForm onSubmit={handleAddTask} />
 
+        {/* Task List */}
         <TaskList
-          tasks={tasks}
+          tasks={visibleTasks}
           onToggleStatus={handleToggleStatus}
           onDelete={handleDeleteTask}
         />
