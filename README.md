@@ -235,4 +235,4 @@ I also planned that if any feature wasn’t fully ready (such as full JSON Impor
 # Summary
 This planning document reflects the decisions I made before starting development.
 By outlining the structure, components, TypeScript types, and state management strategy first, I was able to build the project more confidently and keep the code organized.
-Planning ahead also helped me understand how React and TypeScript work together and allowed me to complete the SBA with a cleaner, more structured result.
+Planning ahead also helped me understand how React and TypeScript work together and allowed me to complete the SBA with a cleaner, more structured result. 
