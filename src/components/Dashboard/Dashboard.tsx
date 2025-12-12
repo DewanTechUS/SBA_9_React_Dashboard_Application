@@ -144,7 +144,7 @@ export const Dashboard: React.FC = () => {
             </div>
           </label>
         </div>
-      <div className="mx-auto max-w-4xl"
+      <div className="mx-auto max-w-4xl">
         {/* Header */}
 
         <header className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
