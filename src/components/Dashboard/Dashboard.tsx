@@ -203,13 +203,14 @@ export const Dashboard: React.FC = () => {
         />
 
         {/* Task Form */}
-        <TaskForm onSubmit={handleAddTask} />
+        <TaskForm onSubmit={handleAddTask} isDarkMode={isDarkMode} />
 
         {/* Task List */}
         <TaskList
           tasks={visibleTasks}
           onToggleStatus={handleToggleStatus}
           onDelete={handleDeleteTask}
+          isDarkMode={isDarkMode}
         />
         {/* Export / Import: This feature will be fully restored in a future update. I commented it out for now because I need to review a few more resources and learn the remaining steps to make it work 100%. */}
          
