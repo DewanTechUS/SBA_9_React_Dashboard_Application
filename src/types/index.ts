@@ -50,16 +50,19 @@ export interface TaskListProps {
   tasks: Task[];
   onToggleStatus: (id: string) => void;
   onDelete: (id: string) => void;
+  isDarkMode: boolean;
 }
 
 export interface TaskItemProps {
   task: Task;
   onToggleStatus: (id: string) => void;
   onDelete: (id: string) => void;
+  isDarkMode: boolean;
 }
 
 export interface TaskFormProps {
   onSubmit: (data: TaskFormData) => void;
+  isDarkMode: boolean;
 }
 
 export interface TaskFilterProps {
