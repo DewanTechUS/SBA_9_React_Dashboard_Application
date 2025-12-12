@@ -1,0 +1,251 @@
+[33mcommit 33d7624246405ab40b070f4a27ad7a26628860e3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Fri Dec 12 00:01:19 2025 -0500
+
+    chore(types): refine task dashboard TypeScript interfaces
+
+[33mcommit 5096f76079d1d64250eb26a2b75041098f4dcaa2[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Thu Dec 11 01:20:15 2025 -0500
+
+    docs: 2nd update README with revised content and improvements
+
+[33mcommit ff08e87bbf483a6d1abd1d84e45139e9d5bb00ad[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Thu Dec 11 01:17:28 2025 -0500
+
+    docs: update README with revised content and improvements
+
+[33mcommit 5c44bcca8e6ec4d4703b22fd256f9095edb12e3e[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Thu Dec 11 01:14:49 2025 -0500
+
+    docs: add README with project overview and reflection
+
+[33mcommit be1c6437a3920bdb09faae9661546f30af4b67c6[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Thu Dec 11 01:13:34 2025 -0500
+
+    docs: add Project_Planning.md (created in MS Word and reorganized for better readability)
+
+[33mcommit 42494485f9c03799eba9992a8b117841d0351eb5[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:44:35 2025 -0500
+
+    build: update Tailwind configuration and content paths
+
+[33mcommit 8d904ed656bd84603f60a8b95a2643dd54f5d522[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:43:53 2025 -0500
+
+    build: update PostCSS config for Tailwind processing
+
+[33mcommit 78f9764197daf84e477aeeaa4f41a2d32de7f8f2[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:42:55 2025 -0500
+
+    style: enhance global UI, add card effects, and improve dashboard layout
+
+[33mcommit b47177a7c5aacd7ede387056114ecc9bea13ebcc[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:42:09 2025 -0500
+
+    chore: update favicon and set HTML title for task dashboard
+
+[33mcommit 069254c4eef55e67159da38d6e837fec800ca03c[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:40:47 2025 -0500
+
+    docs(types): clarify task, filter, and props interfaces with inline comments
+
+[33mcommit 0cb2cbd22e02f5a8185a34f5272c3ba37feb024f[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:39:10 2025 -0500
+
+    feat(task-form): refine controlled inputs, enhance validation, and improve styling
+
+[33mcommit 393878b425e67660c8a97bc3bb4031f3a84dd90a[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 23:37:14 2025 -0500
+
+    content(dashboard): customize SBA header and pause export/import UI
+
+[33mcommit 44fc0c730ebefe66faf14d7b4894f3afb74339b3[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:40:58 2025 -0500
+
+    style(global): configure Tailwind layers and add custom global styling for body, inputs, buttons, and dashboard cards
+
+[33mcommit d6909b7850719c896df092818c010ef15c3c0f8c[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:38:41 2025 -0500
+
+    build: setup postcss.config.js with Tailwind and Autoprefixer plugins
+
+[33mcommit c440b12b570d6ec84a2fc9e6dbb796a51cff8f33[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:36:57 2025 -0500
+
+    build(tailwind): initialize tailwind.config.js with src and index.html paths
+
+[33mcommit 8f4d38522e15a1c1aa11c1075d2bb69529302d2a[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:29:03 2025 -0500
+
+    chore(main): setup root renderer and load Tailwind index.css
+
+[33mcommit 6b921d4257bd97fb17648d5dd892617bb55c56bb[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:24:58 2025 -0500
+
+    feat(app): render Dashboard as root application component
+
+[33mcommit e3971f2d7ddf776f2192f99bb9d443de48a9623c[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:22:30 2025 -0500
+
+    feat(dashboard): add dark mode toggle and JSON export/import tools
+
+[33mcommit ad1d5290ca74cc768ee4b95d9ae90f540d405fdf[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:20:43 2025 -0500
+
+    feat(dashboard): add filtering, sorting, and stats summary to Dashboard
+
+[33mcommit 05a8468b2aa331373974f3f1b8604bb42c50c8a5[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:18:55 2025 -0500
+
+    feat(dashboard): add basic Dashboard with task CRUD and localStorage persistence
+
+[33mcommit ba7ac3968bf4e992909064a12099ddaa9b15d8f6[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:14:52 2025 -0500
+
+    style(task-filter): refine layout to 4-column grid with compact priority and sort controls
+
+[33mcommit c5f0433edca45be1b8213cd8d613dd07389566df[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:11:47 2025 -0500
+
+    feat(task-filter): add priority and sort dropdowns to TaskFilter
+
+[33mcommit bfb001bf462b8ecd3ee5bbdb09361c6e7516fe0f[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 20:10:10 2025 -0500
+
+    feat(task-filter): add basic TaskFilter with search and status controls
+
+[33mcommit 17696c86fa8029a32dc37b267b860eefd907baa9[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 18:18:22 2025 -0500
+
+    feat(task-form): add UI fields including description, due date, status, priority, and improved styling
+
+[33mcommit 89420bb985249c4b92995f3c45a4722b32cb518f[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 18:16:29 2025 -0500
+
+    feat(task-form): updated basic TaskForm component with initial state and submit handling
+
+[33mcommit e0f23553d6db71bc684c3d52f734a787971e451e[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 18:15:40 2025 -0500
+
+    feat(task-form): add basic TaskForm component with initial state and submit handling
+
+[33mcommit 9f16a3e2baf0fa549c2ab50feb3fdcc6ce046fed[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 18:03:22 2025 -0500
+
+    feat(task-item):TaskItem UI with priority badge, status labels, handlers, and hover styling
+
+[33mcommit 392c2dd2c7531318f304a4a6ab5a15cb4f76e9c3[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 17:42:04 2025 -0500
+
+    feat(task-item): add metadata section with status, created date, and opt due date
+
+[33mcommit 52ca7008053d09e0035db436e4f86e44ae927fee[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 17:41:08 2025 -0500
+
+    feat(task-item): add basic TaskItem component with title, description, and action buttons
+
+[33mcommit dbe1454f9fd8db1808d29a6230dc164a1812e8da[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 17:38:26 2025 -0500
+
+    feat(task-list): implement TaskList component with mapped TaskItem rendering and empty filter state
+
+[33mcommit 88106db83671e3b53bc3a80d7c73a26ad4247201[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 17:28:02 2025 -0500
+
+    utils: update imports to include TaskSortBy, TaskStats, and TaskPriority
+
+[33mcommit 5328e876e719d59ef4bcc4fd46570a70e7e23357[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 17:13:58 2025 -0500
+
+    utils: add getTaskStats for dashboard statistics generation
+
+[33mcommit 62292945f8405429706dd4e079fcc4effdc45058[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:34:30 2025 -0500
+
+    utils: add applySort and priorityWeight helpers for sorting tasks
+
+[33mcommit 81b981667816514749628bd6328ef6961e822fbe[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:22:37 2025 -0500
+
+    utils: add applyFilters function for task filtering logic
+
+[33mcommit f538da64571815abe46b158d6ac4541da3ea9e54[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:18:39 2025 -0500
+
+    types: add TaskStats and prop interfaces for core dashboard components
+
+[33mcommit 74421e0eb6be10866f48db9efc5583fc3173fb2d[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:11:11 2025 -0500
+
+    types: add TaskFilters and TaskSortBy for dashboard controls
+
+[33mcommit 1e7a37fb01f0147196e4c27f008f0e8d4993f49a[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:09:07 2025 -0500
+
+    types: define Task and TaskFormData models for tasks and form state
+
+[33mcommit c2a8932b174073fdbfce8065e452e395cffa9723[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 16:05:13 2025 -0500
+
+    types: add TaskStatus and TaskPriority enums
+
+[33mcommit ebd7471111cfdb8e2956e408d9f178745afb2493[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 15:26:58 2025 -0500
+
+    docs: add project planning document
+
+[33mcommit 010e028ba423be8c0a26d59137bf616946e9cb3e[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 15:14:29 2025 -0500
+
+    feat: add task dashboard component structure, types, and utilities
+
+[33mcommit 1cc2bdf42143fbfe7b9ef1be175aa52791b3c751[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 15:00:07 2025 -0500
+
+    Set up Tailwind CSS and PostCSS for dashboard
+
+[33mcommit c23ac5bbf60fa68b2473d5aac8a6c14fa50ddeca[m
+Author: Dewan Mahmud Rocky <rockyit10@gmail.com>
+Date:   Wed Dec 10 14:54:16 2025 -0500
+
+    Installed initial dependencies and generated project structure

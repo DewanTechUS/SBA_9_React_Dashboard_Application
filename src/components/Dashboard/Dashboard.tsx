@@ -102,20 +102,20 @@ export const Dashboard: React.FC = () => {
   function handleToggleTheme() {
     setIsDarkMode((prev) => !prev);
   }
+ // Export / Import handlers (commented out for now) This feature will be fully restored in a future update. I commented it out for now because I need to review a few more resources and learn the remaining steps to make it work 100%.
+  // function handleGenerateExport() {
+  //   setExportText(JSON.stringify(tasks, null, 2));
+  // }
 
-  function handleGenerateExport() {
-    setExportText(JSON.stringify(tasks, null, 2));
-  }
-
-  function handleImport() {
-    if (!exportText.trim()) return;
-    try {
-      const parsed: Task[] = JSON.parse(exportText);
-      setTasks(parsed);
-    } catch (error) {
-      alert("Invalid JSON. Please check the format.");
-    }
-  }
+  // function handleImport() {
+  //   if (!exportText.trim()) return;
+  //   try {
+  //     const parsed: Task[] = JSON.parse(exportText);
+  //     setTasks(parsed);
+  //   } catch (error) {
+  //     alert("Invalid JSON. Please check the format.");
+  //   }
+  // }
 
   // apply filters + sorting
   const visibleTasks = applySort(applyFilters(tasks, filters), sortBy);
@@ -144,7 +144,7 @@ export const Dashboard: React.FC = () => {
             </div>
           </label>
         </div>
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl"
         {/* Header */}
 
         <header className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
@@ -169,20 +169,28 @@ export const Dashboard: React.FC = () => {
         
         {/* Stats */}
         <section className="mt-4 grid gap-3 md:grid-cols-4">
-          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
-            <p className="text-[11px] text-slate-500">Total</p>
+          <div className={`rounded-lg p-3 text-center shadow-sm ${
+            isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white"
+          }`}>
+            <p className={`text-[11px] ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}>Total</p>
             <p className="text-lg font-semibold">{stats.total}</p>
           </div>
-          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
-            <p className="text-[11px] text-slate-500">To Do</p>
+          <div className={`rounded-lg p-3 text-center shadow-sm ${
+            isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white"
+          }`}>
+            <p className={`text-[11px] ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}>To Do</p>
             <p className="text-lg font-semibold">{stats.todo}</p>
           </div>
-          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
-            <p className="text-[11px] text-slate-500">In Progress</p>
+          <div className={`rounded-lg p-3 text-center shadow-sm ${
+            isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white"
+          }`}>
+            <p className={`text-[11px] ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}>In Progress</p>
             <p className="text-lg font-semibold">{stats.inProgress}</p>
           </div>
-          <div className="rounded-lg bg-white p-3 text-center shadow-sm">
-            <p className="text-[11px] text-slate-500">Done</p>
+          <div className={`rounded-lg p-3 text-center shadow-sm ${
+            isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white"
+          }`}>
+            <p className={`text-[11px] ${isDarkMode ? "text-slate-400" : "text-slate-600"}`}>Done</p>
             <p className="text-lg font-semibold">{stats.done}</p>
           </div>
         </section>
