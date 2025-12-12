@@ -67,4 +67,5 @@ export interface TaskFilterProps {
   sortBy: TaskSortBy;
   onChangeFilters: (filters: TaskFilters) => void;
   onChangeSortBy: (sortBy: TaskSortBy) => void;
+  isDarkMode: boolean;
 }
