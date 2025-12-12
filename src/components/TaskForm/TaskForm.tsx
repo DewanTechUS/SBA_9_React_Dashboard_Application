@@ -11,7 +11,7 @@ const initialForm: TaskFormData = {
   dueDate: "",
 };
 
-export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
+export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit, isDarkMode }) => {
   const [form, setForm] = useState<TaskFormData>(initialForm);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,11 +51,17 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
     onSubmit(form);
     setForm(initialForm);
   }
+  const cardClass = isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white";
+  const labelClass = isDarkMode ? "text-slate-300" : "text-slate-600";
+  const fieldClass = isDarkMode
+    ? "border-slate-600 bg-slate-900 text-slate-100 placeholder:text-slate-400"
+    : "border-slate-300 bg-white text-slate-900 placeholder:text-slate-400";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 space-y-3 rounded-lg bg-white p-4 shadow-sm"
+     className={`mt-4 space-y-3 rounded-lg p-4 shadow-sm ${cardClass}`}
+
     >
       <h2 className="text-sm font-semibold">Add Task</h2>
 
@@ -67,48 +73,48 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
 
       <div className="grid gap-3 md:grid-cols-2">
         <div>
-          <label className="block text-[11px] font-medium text-slate-600">Title</label>
+          <label className={`block text-[11px] font-medium ${labelClass}`}>Title</label>
           <input
             name="title"
             value={form.title}
             onChange={handleChange}
-            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+            className={`mt-1 w-full rounded border px-2 py-1 text-sm ${fieldClass}`}
             placeholder="e.g. Review project documentation"
           />
         </div>
 
         <div>
-          <label className="block text-[11px] font-medium text-slate-600">Due Date</label>
+          <label className={`block text-[11px] font-medium ${labelClass}`}>Due Date</label>
           <input
             type="date"
             name="dueDate"
             value={form.dueDate || ""}
             onChange={handleChange}
-            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+            className={`mt-1 w-full rounded border px-2 py-1 text-sm ${fieldClass}`}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-[11px] font-medium text-slate-600">Description</label>
+        <label className={`block text-[11px] font-medium ${labelClass}`}>Description</label>
         <textarea
           name="description"
           value={form.description}
           onChange={handleChange}
           rows={3}
-          className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+          className={`mt-1 w-full rounded border px-2 py-1 text-sm ${fieldClass}`}
           placeholder="Short note about what needs to be done..."
         />
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
         <div>
-          <label className="block text-[11px] font-medium text-slate-600">Status</label>
+          <label className={`block text-[11px] font-medium ${labelClass}`}>Status</label>
           <select
             name="status"
             value={form.status}
             onChange={handleChange}
-            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+            className={`mt-1 w-full rounded border px-2 py-1 text-sm ${fieldClass}`}
           >
             <option value="todo">To Do</option>
             <option value="in-progress">In Progress</option>
@@ -117,12 +123,12 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
         </div>
 
         <div>
-          <label className="block text-[11px] font-medium text-slate-600">Priority</label>
+          <label className={`block text-[11px] font-medium ${labelClass}`}>Priority</label>
           <select
             name="priority"
             value={form.priority}
             onChange={handleChange}
-            className="mt-1 w-full rounded border border-slate-300 px-2 py-1 text-sm"
+            className={`mt-1 w-full rounded border px-2 py-1 text-sm ${fieldClass}`}
           >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
