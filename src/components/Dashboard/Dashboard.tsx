@@ -1,6 +1,4 @@
-// src/components/Dashboard/Dashboard.tsx
 import React, { useEffect, useState } from "react";
-
 import { TaskForm } from "../TaskForm/TaskForm";
 import { TaskFilter } from "../TaskFilter/TaskFilter";
 import { TaskList } from "../TaskList/TaskList";
@@ -28,8 +26,8 @@ export const Dashboard: React.FC = () => {
   const [sortBy, setSortBy] = useState<TaskSortBy>("created-newest");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Export / Import text area state
-  const [exportText, setExportText] = useState("");
+// // Export / Import text area state
+// const [exportText, setExportText] = useState("");
 // Update body styles based on theme
   useEffect(() => {
     if (isDarkMode) {
