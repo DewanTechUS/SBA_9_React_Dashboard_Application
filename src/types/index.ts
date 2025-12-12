@@ -1,15 +1,14 @@
-// src/types/index.ts
-// Define types for task status and priority
+// Define types for task management dashboard
 export type TaskStatus = "todo" | "in-progress" | "done";
 export type TaskPriority = "low" | "medium" | "high";
 export interface Task {
-  id: string;               // unique identifier
+  id: string;             
   title: string;
   description: string;
   status: TaskStatus;
   priority: TaskPriority;
-  createdAt: number;        // timestamp in milliseconds
-  dueDate?: string;         //store as ISO string// 
+  createdAt: number;       
+  dueDate?: string;        
 
 }
 
@@ -38,9 +37,6 @@ export type TaskSortBy =
   
   | "priority-high"
   | "priority-low";
-
-
-
   // dashboard statistics // 
   export interface TaskStats {
   total: number;
