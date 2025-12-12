@@ -7,6 +7,7 @@ export const TaskList: React.FC<TaskListProps> = ({
   tasks,
   onToggleStatus,
   onDelete,
+  isDarkMode,
 }) => {
   if (tasks.length === 0) {
     return (
@@ -24,6 +25,7 @@ export const TaskList: React.FC<TaskListProps> = ({
           task={task}
           onToggleStatus={onToggleStatus}
           onDelete={onDelete}
+          isDarkMode={isDarkMode}
         />
       ))}
     </ul>
