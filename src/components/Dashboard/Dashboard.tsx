@@ -199,6 +199,7 @@ export const Dashboard: React.FC = () => {
           sortBy={sortBy}
           onChangeFilters={handleChangeFilters}
           onChangeSortBy={handleChangeSortBy}
+          isDarkMode={isDarkMode}
         />
 
         {/* Task Form */}
