@@ -1,4 +1,3 @@
-// src/components/TaskFilter/TaskFilter.tsx
 import React from "react";
 import type { TaskFilterProps } from "../../types";
 
