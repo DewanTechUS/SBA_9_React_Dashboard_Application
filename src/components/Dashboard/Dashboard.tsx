@@ -26,9 +26,6 @@ export const Dashboard: React.FC = () => {
   const [sortBy, setSortBy] = useState<TaskSortBy>("created-newest");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-// // Export / Import text area state
-// const [exportText, setExportText] = useState("");
-// Update body styles based on theme
   useEffect(() => {
     if (isDarkMode) {
       document.body.style.backgroundColor = "#020617";
@@ -38,7 +35,7 @@ export const Dashboard: React.FC = () => {
       document.body.style.color = "#0f172a";
     }
   }, [isDarkMode]);
-  // Load tasks from localStorage on first mount
+
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (!saved) return;
@@ -51,7 +48,7 @@ export const Dashboard: React.FC = () => {
     }
   }, []);
 
-  // Save tasks whenever they change
+
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
@@ -115,7 +112,6 @@ export const Dashboard: React.FC = () => {
   //   }
   // }
 
-  // apply filters + sorting
   const visibleTasks = applySort(applyFilters(tasks, filters), sortBy);
   const stats = getTaskStats(tasks);
 
@@ -143,7 +139,6 @@ export const Dashboard: React.FC = () => {
           </label>
         </div>
       <div className="mx-auto max-w-4xl">
-        {/* Header */}
 
         <header className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div>
@@ -165,7 +160,6 @@ export const Dashboard: React.FC = () => {
           </div>
         </header>
         
-        {/* Stats */}
         <section className="mt-4 grid gap-3 md:grid-cols-4">
           <div className={`rounded-lg p-3 text-center shadow-sm ${
             isDarkMode ? "bg-slate-800 text-slate-100" : "bg-white"
@@ -193,7 +187,6 @@ export const Dashboard: React.FC = () => {
           </div>
         </section>
 
-        {/* Task Filter */}
         <TaskFilter
           filters={filters}
           sortBy={sortBy}
@@ -202,10 +195,9 @@ export const Dashboard: React.FC = () => {
           isDarkMode={isDarkMode}
         />
 
-        {/* Task Form */}
         <TaskForm onSubmit={handleAddTask} isDarkMode={isDarkMode} />
 
-        {/* Task List */}
+
         <TaskList
           tasks={visibleTasks}
           onToggleStatus={handleToggleStatus}
@@ -217,8 +209,8 @@ export const Dashboard: React.FC = () => {
         {/* <section className="mt-6 rounded-lg bg-white p-4 shadow-sm">
           <h2 className="text-sm font-semibold">Export / Import Tasks</h2>
           <p className="mt-1 text-[11px] text-slate-500">
-            You can copy this JSON to save your tasks or paste JSON here to
-            restore them.
+            This is an advanced feature to back up or transfer your tasks. Use the buttons below to generate a JSON export of your current tasks or to import tasks from a JSON string. Be careful when importing, as it will overwrite your current tasks. 
+            https://ps-lms.vercel.app/curriculum/se/413/sba#:~:text=and%20resolve%20them.-,Part%205%3A%20(Optional)%20User%20Interface,-Ensure%20the%20project
           </p>
           <div className="mt-2 flex gap-2">
             <button
