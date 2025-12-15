@@ -1,9 +1,5 @@
-// src/utils/taskUtils.ts
-// Utility functions for filtering and sorting tasks
-// https://ps-lms.vercel.app/curriculum/se/415/sba
 import type { Task, TaskFilters, TaskSortBy, TaskStats, TaskPriority } from "../types";
-// Function to filter tasks based on provided filters 
-// There are three filter criteria: status, priority, and search query
+
 export function applyFilters(tasks: Task[], filters: TaskFilters): Task[] {
   const { status, priority, query } = filters;
   const search = query.trim().toLowerCase();
@@ -45,7 +41,6 @@ export function applySort(tasks: Task[], sortBy: TaskSortBy): Task[] {
   return copy;
 }
 
-// Helper to assign numeric weights to priorities for sorting
 function priorityWeight(priority: TaskPriority): number {
   if (priority === "low") return 1;
   if (priority === "medium") return 2;
