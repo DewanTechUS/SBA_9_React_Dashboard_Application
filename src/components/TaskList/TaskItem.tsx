@@ -1,4 +1,3 @@
-// src/components/TaskList/TaskItem.tsx
 import React from "react";
 import type { TaskItemProps } from "../../types";
 
