@@ -1,4 +1,4 @@
-// Define types for task management dashboard
+
 export type TaskStatus = "todo" | "in-progress" | "done";
 export type TaskPriority = "low" | "medium" | "high";
 export interface Task {
@@ -12,7 +12,6 @@ export interface Task {
 
 }
 
-// Define type for task form data
 export interface TaskFormData {
   title: string;
   description: string;
@@ -20,14 +19,14 @@ export interface TaskFormData {
   priority: TaskPriority;
   dueDate?: string;
 }
-// Filter options for the dashboard
+
 export interface TaskFilters {
   status: TaskStatus | "all";
   priority: TaskPriority | "all";
-  query: string; // search text
+  query: string; 
 }
 
-// Sorting options // Define type for sorting tasks
+
 export type TaskSortBy =
   | "created-newest"
   | "created-oldest"
@@ -37,7 +36,7 @@ export type TaskSortBy =
   
   | "priority-high"
   | "priority-low";
-  // dashboard statistics // 
+
   export interface TaskStats {
   total: number;
   todo: number;
@@ -45,7 +44,6 @@ export type TaskSortBy =
   done: number;
 }
 
-// Props for various components in the dashboard 
 export interface TaskListProps {
   tasks: Task[];
   onToggleStatus: (id: string) => void;
